@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用Spring来创建对象，在Spring中这些称为Bean-->
+    <!--
+    id：bean的唯一标识
+    class：bean对象所对应的全限定名：包名+类名
+    name：也是别名，而且可以逗号分隔取多个别名
+    -->
+    <bean id="user" class="com.kuang.pojo.User" name="user2">
+        <!--有参构造方式1：通过下标给参数赋值-->
+        <!--<constructor-arg index="0" value="zhagnsanfeng"/>-->
+        <!--有参构造方式2：通过类型给参数赋值-->
+        <!--<constructor-arg type="java.lang.String" value="zhangsan"/>-->
+        <!--有参构造方式3:直接通过参数名赋值-->
+        <constructor-arg name="name" value="zhangsanfeng"/>
+        <property name="name" value="张三"/>
+    </bean>
+
+    <!--别名，如果添加了别名，我们也可以使用别名获取对象-->
+    <alias name="user" alias="userNew"/>
+</beans>
